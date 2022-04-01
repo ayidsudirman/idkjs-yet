@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- adding some custom CSS -->
+    <style type="text/tailwindcss">
+        @layer base {
+            h1 {
+              @apply text-2xl my-3 
+            }
+            h2 {
+              @apply text-xl my-5
+            }
+            p {
+              @apply my-3
+            }
+            input {
+              @apply w-10/12 max-w-sm p-2 border-green-400 border-solid border-2 rounded focus:outline-none focus:bg-gray-100
+            }
+            li {
+              @apply p-3 mx-5 my-2 border-l-4 border-gray-100 hover:border-red-800
+            }
+        }
+        @layer components {
+          #page-banner {
+            @apply bg-gray-200 py-3 text-center
+          }
+          .wrapper {
+            @apply w-10/12 max-w-4xl rounded-md box-border overflow-hidden pb-5 border-gray-100 border-2 mx-auto my-5
+          }
+          .delete {
+            @apply float-right bg-gray-100 text-black px-2 rounded hover:bg-red-800 hover:text-white cursor-pointer
+          }
+          .btn {
+            @apply cursor-pointer bg-green-400 text-black px-4 py-2 rounded hover:bg-green-600 border-l-0  ml-3
+          }
+          #add-book {
+            @apply text-center
+          }
+        }
+    </style>
+    <title>JavaScript Document Object Model</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <section id="page-banner">
+                <h1>Kunci-Kunci Ilmu Syar'i</h1>
+                <p>Silsilah Aqidah yang Menyelamatkan dari Api Neraka</p>
+                <form id="search-books">
+                    <input type="text" placeholder="Cari Kitab ..."/>
+                </form>
+            </section>
+        </header>
+        <main id="book-list" class="m-8">
+          <h2>Kitab yang akan dikaji</h2>
+          <ul>
+            <li>
+              <span class="name">Tsalatsatul Ushul</span>
+              <span class="delete">Hapus</span>
+            </li>
+            <li>
+              <span class="name">Kasyfusy Syubhat</span>
+              <span class="delete">Hapus</span>
+            </li>
+            <li>
+              <span class="name">Nawaqidhul Islam</span>
+              <span class="delete">Hapus</span>
+            </li>
+            <li>
+              <span class="name">Al-Ushulus Sittah</span>
+              <span class="delete">Hapus</span>
+            </li>
+            <li>
+              <span class="name">Sittah Mawadhi' Minas Sirah</span>
+              <span class="delete">Hapus</span>
+            </li>
+          </ul>
+        </main>
+        <form id="add-book">
+          <input type="text" placeholder="Tambah Kitab ...">
+          <button class="btn">Tambah</button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
