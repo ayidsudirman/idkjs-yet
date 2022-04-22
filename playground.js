@@ -50,7 +50,7 @@ bookList.innerHTML += '<p>Kitab Mafatihul Ilmi selanjutnya ...</p>';
 
 // NODES
 // banner = document.querySelector('#page-banner');
-// console.log('#banner node type is:', banner.nodeType);
+// console.log('#banner node type is:', banner.nodeType); //There are 12 different node types, refer to w3school
 // console.log('#banner node name is:', banner.nodeName);
 // console.log('#banner node has child:', banner.hasChildNodes());
 
@@ -71,3 +71,16 @@ console.log(clonedBanner);
 bookList.previousElementSibling.querySelector('p').innerHTML += '<br /> yang wajib diketahui setiap muslim dan muslimah';
 
 
+// EVENTS
+var btns = document.querySelectorAll('#book-list .delete');
+
+btns.forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+
+        const li = e.target.parentElement;
+        
+        // parent.removeChild()
+        li.parentNode.removeChild(li);
+    })
+})
