@@ -84,3 +84,15 @@ btns.forEach(btn => {
         li.parentNode.removeChild(li);
     })
 })
+
+// STYLE & CLASSES
+
+var li = document.querySelector('li:last-child');
+
+li.style.color = "red";
+li.style.marginTop = "60px";
+
+// this is will work but there is another way to do it. You probably forget to add space so several classes don not added properly
+li.className += " name";  
+
+li.classList.add('name'); // its better way to do this
