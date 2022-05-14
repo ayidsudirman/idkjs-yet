@@ -23,6 +23,7 @@
             li {
               @apply p-3 mx-5 my-2 border-l-4 border-gray-100 hover:border-red-800
             }
+            
         }
         @layer components {
           #page-banner {
@@ -40,9 +41,17 @@
           #add-book {
             @apply text-center
           }
+          .panel {
+            @apply hidden
+          }            
+          .active {
+            @apply block
+          }    
+        
         }
     </style>
     <title>JavaScript Document Object Model</title>
+    <script src="app.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -81,11 +90,27 @@
           </ul>
         </main>
         <form id="add-book">
+          <section class="checkbox block my-3">
+            <input type="checkbox" class="w-5" id="hide">
+            <label for="hide" class="leading-9">Jangan tampilkan kitab</label>
+          </section>
           <input type="text" placeholder="Tambah Kitab ...">
           <button class="btn">Tambah</button>
         </form>
+        <footer id='tabbed-content' class="mt-10">
+          <ul class='tabs flex justify-center cursor-pointer'>
+            <li data-click='#program' class='active'>Tentang Program</li>
+            <li data-click='#author'>Tentang Pengajar</li>
+          </ul>
+            <section class='panel active w-10/12 mx-auto border-2 p-2' id='program'>
+              <p>Mafaatihul Ilmi atau Kunci-Kunci Ilmu Syar'i merupakan program kuliah intensif mencakup ilmu dasar seperti Aqidah dan Manhaj, Tafsir, Ushul Tafsir dan Tajwid, Fiqih, Ushul Fiqih, Qawaid Fiqhiyah, dan Maqashid Syariah, Hadits, Musthalah Hadits, Adab dan Akhlak, Bahasa Arab, Sirah. Kurikulum ini sudah dianggap baik oleh Syaikh Prof. DR. Shalih Al-Fauzan (anggota Hai’at Kibarul ‘Ulama Arab Saudi)</p>
+            </section>
+            <section class='panel w-10/12 mx-auto border-2 p-2' id='author'>
+              <p>Ustadz Dzulqarnain bin Muhammad Sunusi merupakan da'i alumnus Ma'had Darul Hadits Yaman dan mudir pondok pesantren As-Sunnah Makassar, penulis buku Islam, dan aktif berdakwah di berbagai daerah di Indonesia dan luar negeri.</p>
+            </section>
+        </footer>
     </div>
-    <script src="app.js"></script>
+    
     <!-- <script src="playground.js"></script> -->
 </body>
 </html>

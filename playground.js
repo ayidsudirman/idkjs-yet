@@ -92,7 +92,14 @@ var li = document.querySelector('li:last-child');
 li.style.color = "red";
 li.style.marginTop = "60px";
 
-// this is will work but there is another way to do it. You probably forget to add space so several classes don not added properly
+// this is will work but there is another way to do it. You probably forget to add space so several classes do not added properly
 li.className += " name";  
 
 li.classList.add('name'); // its better way to do this
+
+// Attributes
+book = document.querySelector('li:last-child');
+
+book.getAttribute('class');
+book.setAttribute('class', 'judul');
+book.removeAttribute('class');
